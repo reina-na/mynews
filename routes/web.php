@@ -34,7 +34,6 @@ ProfileController の edit Action に割り当てるように設定してくだ�
 
 Route::group(['prefix'=> 'admin'],function(){
     Route::get('profile/create','Admin\ProfileController@add');
-    Route::get('profile/edit','Admin\ProfileController@edit');
 });
 Auth::routes();
 
@@ -42,8 +41,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'admin'], function() {
     Route::get('news/create', 'Admin\NewsController@add')->middleware('auth');
-    Route::get('profile/create','Admin\NewsController@add')->middleware('auth');
-    Route::get('profile/edit','Admin\NewsController@add')->middleware('auth');
+    Route::post('news/create', 'Admin\NewsController@create')->middleware('auth');
+    Route::post('profile/create','Admin\ProfileController@create')->middleware('auth');
+    Route::post('profile/edit','Admin\ProfileController@update')->middleware('auth');
 });
 Auth::routes();
 
