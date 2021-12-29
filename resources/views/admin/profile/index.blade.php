@@ -39,7 +39,7 @@
                                <th width="20%">氏名</th>
                                <th width="20%">性別</th>
                                <th width="20%">趣味</th>
-                               <th width="50%">自己紹介欄</th>
+                               <th width="20%">自己紹介欄</th>
                                <th width="10%">操作</th>
                            </tr>
                        </thead>
@@ -54,7 +54,11 @@
                                <td>
                                    <div>
                                        <a href="{{ action('Admin\ProfileController@edit',
-                                                   ['id' => $profile -> id]) }}">編集</a>
+                                                   ['id' => $profile->id]) }}">編集</a>
+                                   </div>
+                                   <div>
+                                       <a href="{{ action('Admin\ProfileController@delete',
+                                                   ['id'=>$profile->id]) }}">削除</a>
                                    </div>
                                </td>
                            </tr>
