@@ -65,6 +65,7 @@
                            @endforeach
                        </tbody>
                    </table>
+                   <p>デプロイ課題</p>
                </div>
            </div>
        </div>
